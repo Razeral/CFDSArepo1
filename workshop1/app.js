@@ -1,7 +1,6 @@
 const express = require("express");
 
 const app = express();
-const port = 8080;
 
 let quotes = [
   "Logic will get you from A to B. Imagination will take you everywhere.",
@@ -20,6 +19,6 @@ app.use(express.static("public"));
 app.use("/images", express.static("images"));
 
 // Server setup
-app.listen(port, () => {
-  console.log(`Running server on PORT ${port}...`);
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Running server on PORT ${process.env.PORT || 8080}...`);
 });
